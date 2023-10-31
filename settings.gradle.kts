@@ -15,4 +15,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "MyLuckWheels"
 include(":app")
-include(":luckWheel")
+include(":luckyWheel2")
