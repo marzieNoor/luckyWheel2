@@ -5,7 +5,7 @@ plugins {
 }
 
 android {
-    namespace = "com.marzie.nourmohammadi.luckwheel"
+    namespace = "com.marzie.nourmohammadi.luckywheel2"
     compileSdk = 34
 
     defaultConfig {
@@ -31,11 +31,32 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+    publishing {
+        // Publishes all build variants with "default" component
+        multipleVariants {
+            allVariants()
+        }
+    }
 }
 
 dependencies {
 
-    implementation("androidx.core:core-ktx:1.9.0")
+    implementation("androidx.core:core-ktx:1.12.0")
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.google.android.material:material:1.10.0")
+}
+afterEvaluate {
+    publishing {
+        publications {
+            // Creates two publications with different artifactIds
+//
+//            allVariants(MavenPublication) {
+//                from components.default
+//
+//                        groupId = 'com.github.marziNoor'
+//                artifactId = 'luckyWheel2'
+//                version = '1.0'
+//            }
+        }
+    }
 }
